@@ -1,120 +1,269 @@
 @import "../../vars.css";
 
 .container {
+  margin-top: 76px;
   color: var(--color-text);
-  margin-top: 79px;
   margin-left: 10%;
   margin-right: 10%;
+  padding: 20px 0;
 }
 
 .title {
-  color: var(--color-text);
   font-size: 35px;
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 16px;
+  background : var(--color-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 14px;
+.section {
+  margin-bottom: 60px;
 }
 
-.skills {
-  width: 45%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 37px;
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--color-text);
 }
 
-.skill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 11px;
+.timeline {
+  position: relative;
+  padding-left: 40px;
 }
 
-.skillImageContainer {
-  background-color: var(--color-secondary);
-  border-radius: 100%;
+.timelineItem {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 20px;
+  top: 60px;
+  width: 2px;
+  height: calc(100% + 30px);
+  background: linear-gradient(180deg, var(--color-primary) 0%, transparent 100%);
+}
+
+.timelineDot {
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 120px;
 }
 
-.skillImageContainer img {
-  width: 75px;
-}
-
-.skill p {
-  font-size: 25px;
-  font-family: var(--font-roboto);
-  font-weight: 500;
-}
-
-.history {
-  width: 45%;
+.dotInner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
   display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.historyItem {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 17px;
-  background: #19376d;
-  background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
-  border-radius: 10px;
+  justify-content: center;
+  border: 4px solid var(--color-bg);
+}
+
+.dotInner::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--color-bg);
+  border-radius: 50%;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--color-card) 20%, var(--color-card-dark) 80%);
+  border: 1px solid var(--color-text);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card.expanded {
+  border-color: var(--color-primary);
+}
+
+.cardHeader {
+  width: 100%;
   padding: 24px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.historyItem img {
-  width: 50px;
+.cardHeader:hover {
+  background-color: var(--color-hover);
 }
 
-.historyItemDetails {
-  font-family: var(--font-roboto);
+.headerContent {
+  flex: 1;
 }
 
-.historyItemDetails h3 {
-  font-size: 30px;
-  font-weight: 500;
-}
-
-.historyItemDetails p {
+.cardTitle {
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
 }
 
-.historyItemDetails ul {
-  margin-top: 6px;
-  list-style-position: inside;
-  font-size: 25px;
-  list-style-type: disc;
-  margin-left: 17px;
+.organization {
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 6px;
 }
 
-@media screen and (max-width: 830px) {
-  .content {
-    flex-direction: column;
+.period {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.chevron {
+  font-size: 16px;
+  color: var(--color-primary);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.cardContent {
+  padding: 0 24px 24px 24px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
+}
+
+.contentTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.descriptionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  space-y: 12px;
+}
+
+.descriptionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.bullet {
+  color: var(--color-primary);
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.highlightsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.highlightItem {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: 20px;
+  border: 1px solid var(--color-primary-border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .timeline {
+    position: relative;
+    padding-left: 60px;
+  }
+  
+  .timelineItem {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .timelineLine {
+    position: absolute;
+    left: -40px;
+    top: 40px;
+    width: 2px;
+    height: calc(100% + 30px);
+    background: linear-gradient(180deg, var(--color-primary) 0%, transparent 100%);
+    z-index: 1;
+  }
+  .timelineDot {
+    position: absolute;
+    left: -52px;
+    top: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
     align-items: center;
-    gap: 34px;
-  }
-
-  .skills {
-    width: 100%;
-    flex-direction: row;
     justify-content: center;
+    z-index: 2;
   }
-
-  .history {
-    width: 100%;
-    gap: 9px;
+  .dotInner {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--color-bg);
+  }
+  
+  .dotInner::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--color-bg);
+    border-radius: 50%;
+  }
+  .cardHeader {
+    padding: 20px;
+    flex-direction: column;
+  }
+  
+  .chevron {
+    margin-left: 0;
+    margin-top: 12px;
   }
 }

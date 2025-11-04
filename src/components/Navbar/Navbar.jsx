@@ -9,7 +9,12 @@ export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <a className={styles.title} href="/">
-        Portfolio
+      <img
+          src={getImageUrl("nav/rawia.png")}
+          alt="Profile logo"
+          className={styles.logo}
+        />
+        Rawia's Space
       </a>
       <div className={styles.menu}>
         <img

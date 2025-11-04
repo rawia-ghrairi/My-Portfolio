@@ -1,0 +1,121 @@
+@import "../../vars.css";
+
+.container {
+  padding: 80px 10%;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 16px;
+  background : var(--color-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categoryCard {
+  background: linear-gradient(180deg, var(--color-thirty) 0%, rgba(5, 60, 163, 0.8) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-primary);
+}
+
+.categoryTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 10px;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.skillBadge {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--color-primary-border);
+  transition: all 0.3s ease;
+}
+
+.skillBadge:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 0;
+  font-size: 18px;
+  color: var(--color-text-secondary);
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #e74c3c;
+  background-color: #fdf2f2;
+  border: 1px solid #fbb;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 5%;
+  }
+  
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .categoryCard {
+    padding: 20px;
+  }
+}

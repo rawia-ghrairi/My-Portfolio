@@ -12,11 +12,16 @@
 }
 
 .title {
-  color: var(--color-text);
   font-size: 35px;
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 16px;
+  background : var(--color-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .content {

@@ -45,6 +45,18 @@
   font-weight: 400;
   letter-spacing: 1.5px;
 }
+.link img {
+  width: 40px; /* taille fixe de l'icône */
+  height: 40px; /* conserve la proportion */
+  object-fit: contain;
+  cursor: pointer; /* pointeur au hover */
+  transition: 0.3s;
+}
+
+.link img:hover {
+  transform: scale(1.1); /* petit effet au hover */
+}
+
 
 @media screen and (max-width: 830px) {
   .container {
@@ -61,4 +73,42 @@
   .links {
     align-items: center;
   }
+}
+.messageForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  align-self: center;
+}
+
+.messageForm input,
+.messageForm textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.messageForm textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.messageForm button {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.messageForm button:hover {
+  opacity: 0.9;
 }
