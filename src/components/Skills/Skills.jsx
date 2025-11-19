@@ -251,23 +251,9 @@ export const Skills = () => {
     acc[skill.category].push(skill);
     return acc;
   }, {});
-  if (loading) {
-    return (
-      <section className={styles.container} id="skills">
-        <h2 className={styles.title}>Technical Skills</h2>
-        <div className={styles.loading}>Loading skills...</div>
-      </section>
-    );
-  }
+ 
 
-  if (error) {
-    return (
-      <section className={styles.container} id="skills">
-        <h2 className={styles.title}>Technical Skills</h2>
-        <div className={styles.error}>Error loading skills: {error}</div>
-      </section>
-    );
-  }
+  
 
   return (
     <section className={styles.container} id="skills">
